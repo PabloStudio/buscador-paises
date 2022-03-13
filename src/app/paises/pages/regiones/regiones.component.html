@@ -1,0 +1,103 @@
+<div class="container text-layout" style="margin-top: 30px;">
+    
+    <!-- Titulo -->
+    <hr>
+    <h2 class="text-center"> Buscar Regiones </h2>
+    <hr>
+
+    <!-- Regiones -->
+    <div class="text-center animate__animated animate__slideInLeft">
+        <button 
+            pButton pRipple 
+            type="button" label="Africa" 
+            (click)="activarRegion( regiones[0] )"
+            class="botonRegiones animate__animated animate__slideInLeft">
+        </button>
+
+        <button 
+            pButton pRipple 
+            type="button" label="America" 
+            class="p-button-secondary botonRegiones" (click)="activarRegion( regiones[1] )">
+        </button>
+
+        <button 
+            pButton pRipple 
+            type="button" label="Asia" 
+            class="p-button-success botonRegiones" (click)="activarRegion( regiones[2] )">
+        </button>
+
+        <button 
+            pButton pRipple 
+            type="button" label="Europa" 
+            class="p-button-danger botonRegiones" (click)="activarRegion( regiones[3] )">
+        </button>
+
+         <button 
+            pButton pRipple 
+            type="button" label="Oceania" 
+            class="p-button-warning botonRegiones" (click)="activarRegion( regiones[4] )">
+        </button>
+
+    </div>
+
+    <hr>
+
+    <!-- Tabla Grande -->
+    <div style="margin-top: 10px;" class="animate__animated animate__zoomInUp" id="tablagrande">
+        <p-table [value]="paises">
+            <ng-template pTemplate="header"> <!-- Header -->
+                <tr>
+                    <th>#</th>
+                    <th>Bandera</th>
+                    <th pSortableColumn="name">Nombre</th>
+                    <th pSortableColumn="capital">Capital</th>
+                    <th pSortableColumn="subregion">Sub-Region</th>
+                    <th></th>
+                </tr>
+            </ng-template>
+    
+            <ng-template pTemplate="body" let-paises let-i="rowIndex"> <!-- Body -->
+                <tr>
+                    <td> {{ i + 1 }} </td>
+                    <td> <img src="{{ paises.flag }}" class="flag-control"> </td>
+                    <td> {{ paises.name }} </td>
+                    <td> {{ paises.capital | valornulo }} </td>
+                    <td> {{ paises.subregion }} </td>
+                    <td>
+                        <a [routerLink]="['/pais', paises.alpha2Code]" style="text-decoration: none">
+                            <button pButton pRipple type="button" icon="pi pi-search" class="p-button-rounded p-button-success p-button-text"></button>
+                        </a>  
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+
+    <!-- Tabla Chica -->
+    <div style="margin-top: 10px;" class="animate__animated animate__zoomInUp" id="tablachica">
+        <p-table [value]="paises" responsiveLayout="scroll">
+            <ng-template pTemplate="header"> <!-- Header -->
+                <tr>
+                    <th> # </th>
+                    <th> Bandera </th>
+                    <th pSortableColumn="name"> Nombre </th>
+                    <th></th>
+                </tr>
+            </ng-template>
+        
+            <ng-template pTemplate="body" let-paises let-i="rowIndex"> <!-- Body -->
+                <tr>
+                    <td> {{ i + 1 }} </td>
+                    <td> <img src="{{ paises.flag }}" class="flag-control"> </td>
+                    <td> {{ paises.name }} </td>
+                    <td>
+                        <a [routerLink]="['/pais', paises.alpha2Code]" style="text-decoration: none">
+                            <button pButton pRipple type="button" icon="pi pi-search" class="p-button-rounded p-button-success p-button-text"></button>
+                        </a>  
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+
+</div>

@@ -1,0 +1,59 @@
+<div class="container text-layout" style="margin-top: 30px;" *ngIf="pais; else cargando">
+
+    <!-- Titulo -->
+    <hr>
+    <h2 class="text-center"> {{ pais.name }} </h2>
+    <hr>
+
+    <!-- Bandera -->
+    <div class="row">
+        <div class="col-12" style="display: flex; justify-content: center; margin-top: 10px;">
+            <img [src]="pais.flag" class="flag-ver">
+        </div>
+    </div>
+    <hr>
+
+    <!-- Informacion -->
+    <div class="col">
+        <h3 class="text-center">Información</h3>
+        <hr>
+
+        <ul class="list-group text-center">
+            <li class="list-group-item" style="background-color: rgb(24, 24, 24); color: white;">
+                <strong> Capital </strong> {{ pais.capital | valornulo }}
+            </li>
+            <li class="list-group-item" style="background-color: rgb(24, 24, 24); color: white;">
+                <strong> Region </strong> {{ pais.region }}
+            </li>
+            <li class="list-group-item" style="background-color: rgb(24, 24, 24); color: white;">
+                <strong> Subregion </strong> {{ pais.subregion }}
+            </li>
+            <li class="list-group-item" style="background-color: rgb(24, 24, 24); color: white;">
+                <strong> Población </strong> {{ pais.population | number }}
+            </li>
+            <li class="list-group-item" style="background-color: rgb(24, 24, 24); color: white;">
+                <strong> Area </strong> {{ pais.area }}
+            </li>
+        </ul>
+    </div>
+
+    <!-- Boton para regresar -->
+    <a href="javascript: history.go(-1)" style="text-decoration: none;">
+        <button 
+            pButton pRipple 
+            type="button" label="Regresar" 
+            style="width: 100%; margin-top: 15px;">
+        </button>
+    </a>
+</div>
+
+<!-- Cargando -->
+<ng-template #cargando>
+    <div class="container alert alert-primary text-center" style="margin-top: 20px">
+        Cargando datos, espere por favor.
+    </div>
+</ng-template>
+
+
+
+<div style="margin-bottom: 10px; width: 100%"></div> <!-- Espacio en blanco -->

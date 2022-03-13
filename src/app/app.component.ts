@@ -1,10 +1,13 @@
+// Importaciones.
 import { Component } from '@angular/core';
 
+// Decorador.
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
-export class AppComponent {
-  title = 'buscador-paises';
+
+// Exportaciones.
+export class AppComponent 
+{
 }

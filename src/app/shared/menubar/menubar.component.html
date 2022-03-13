@@ -1,0 +1,95 @@
+<div class="menubar text-layout">
+    <!-- Titulo -->
+    <h5 
+        style="margin-left: 20px; display: inline-block; line-height: 35px;" 
+        class="animate__animated animate__backInLeft"> BuscadorPaises 
+    </h5>
+
+    <!-- Opciones en Texto -->
+    <a routerLink="/capitales">
+        <h6 class="botonOpciones animate__animated animate__backInRight" style="margin-right: 50px;" id="opciones"> Capitales </h6>
+    </a>
+
+    <a routerLink="/regiones">
+        <h6 class="botonOpciones animate__animated animate__backInRight" style="margin-right: 160px;" id="opciones"> Regiones </h6>
+    </a>
+
+    <a routerLink="/paises">
+        <h6 class="botonOpciones animate__animated animate__backInRight" style="margin-right: 280px;" id="opciones"> Paises </h6>
+    </a>
+    
+    <a routerLink="">
+        <h6 class="botonOpciones animate__animated animate__backInRight" style="margin-right: 390px;" id="opciones"> Inicio </h6>
+    </a>
+
+    <!-- Opciones en Menu -->
+    <button 
+        pButton pRipple 
+        type="button" 
+        icon="pi pi-bars" 
+        id="side"
+        class="p-button-rounded p-button-secondary p-button-text botonMenu animate__animated animate__zoomIn" 
+        (click)="visible = true">
+    </button>
+
+</div>
+
+<!-- Sidebar -->
+<p-sidebar styleClass="sidebar" [(visible)]="visible" position="top">
+    <!-- Titulo-->
+    <div class="container">
+      <h5 class="text-center"> BuscadorPaises </h5>
+      <hr>
+    
+    <!-- Botones -->
+    <a routerLink="" style="text-decoration: none;">
+        <button 
+            style="width: 100%; color: white; margin-top: 10px;" 
+            class="button" 
+            pButton pRipple 
+            type="button" 
+            label="Inicio" 
+            class="p-button-secondary p-button-text"
+            (click)="cerrar()"
+        ></button>
+    </a>
+
+    <a routerLink="/paises" style="text-decoration: none;">
+        <button 
+            style="width: 100%; color: white; margin-top: 10px;" 
+            class="button" 
+            pButton pRipple 
+            type="button" 
+            label="Paises" 
+            class="p-button-secondary p-button-text"
+            (click)="cerrar()"
+    ></button>
+    </a>
+
+    <a routerLink="/regiones" style="text-decoration: none;">
+        <button 
+            style="width: 100%; color: white; margin-top: 10px;" 
+            class="button" 
+            pButton pRipple 
+            type="button" 
+            label="Regiones" 
+            class="p-button-secondary p-button-text"
+            (click)="cerrar()"
+    ></button>
+    </a>
+
+    <a routerLink="/capitales" style="text-decoration: none;">
+        <button 
+            style="width: 100%; color: white; margin-top: 10px;" 
+            class="button" 
+            pButton pRipple 
+            type="button" 
+            label="Capitales" 
+            class="p-button-secondary p-button-text"
+            (click)="cerrar()"
+    ></button>
+    </a>
+
+
+    </div>
+</p-sidebar>
